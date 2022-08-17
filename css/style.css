@@ -1,0 +1,238 @@
+body {
+  background-color: rgb(20, 20, 20);
+  background: linear-gradient(
+    90deg,
+    rgba(20, 20, 20, 1) 0%,
+    rgba(25, 25, 25, 1) 100%
+  );
+  height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main {
+  max-width: 1300px;
+  min-width: 650px;
+  min-height: 700px;
+  background-color: #401818;
+  background: linear-gradient(45deg, #180909, #220c0c, #381a1a);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+.centerFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topMain {
+  height: 50px;
+  gap: 5px;
+  margin-top: 25px;
+}
+.topMain input[type="text"] {
+  width: 350px;
+  height: 25px;
+  background-color: #f28d52ad;
+  border: 2px solid #f25430;
+  color: rgb(223, 223, 223);
+  padding: 5px;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 25px;
+}
+.topMain input[type="text"]:focus {
+  outline: none;
+  border: 2px solid #f2a25c;
+}
+.topMain input[type="text"]::placeholder {
+  color: rgba(223, 223, 223, 0.582);
+  font-weight: 500;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.topMain button {
+  height: calc(25px + 4px + 10px);
+  width: calc(25px + 4px + 10px);
+  background-color: #f28d52;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.topMain button:hover {
+  font-size: 25px;
+  filter: brightness(150%);
+  cursor: pointer;
+}
+
+/* LISTA  DE  PRODUCTOS */
+.mainContainer {
+  flex-direction: column;
+}
+.mainContainer h2 {
+  color: #f2a25c;
+  font-size: 25px;
+}
+.pizzaList {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.pizzaContainer {
+  width: 200px;
+  min-height: 325px;
+  background-color: #f28d52;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border-radius: 5px;
+}
+.pizzaContainer img {
+  width: 100%;
+  height: 140px;
+}
+.pizzaText {
+  text-align: center;
+  margin-bottom: 25px;
+  min-height: 165.5px;
+  padding-top: 20px;
+}
+.pizzaText h3 {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.pizzaText p {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 25px;
+  height: 70px;
+}
+.pizzaText b {
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  border: 1px solid #40181842;
+  border-style: dashed;
+}
+.buyButton {
+  width: 100%;
+  padding: 15px 30px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f06f19 51%,
+    #ff512f 100%
+  );
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.buyButton:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.buyButton:active {
+  transform: scale(0.95);
+}
+.displayNone {
+  display: none;
+}
+.errorContainer {
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.errorMessage {
+  width: 65%;
+  font-size: 25px;
+  text-align: center;
+  color: rgb(255, 30, 0);
+  font-weight: bold;
+}
+.errorButton {
+  background-color: #f26835;
+  font-size: 25px;
+  border: 0;
+  padding: 15px;
+  font-weight: bold;
+  color: whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-image: linear-gradient(
+    45deg,
+    #ff3c15 0%,
+    #f01919 66%,
+    #ff3c15 100%
+  );
+  cursor: pointer;
+  transition: 0.3s;
+  background-size: 200% auto;
+}
+.errorButton:hover {
+    background-position: right center;
+}
+
+@media (max-width: 650px) {
+  main {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    min-width: auto;
+    border-radius: 0;
+  }
+  .topMain input[type="text"] {
+    width: 100%;
+  }
+  .topMain {
+    height: min-content;
+  }
+  .pizzaContainer {
+    width: 40%;
+    min-height: auto;
+    height: auto;
+  }
+  .pizzaContainer img {
+    width: 100%;
+    height: max-content;
+    background-size: cover;
+  }
+}
+@media (max-width: 450px) {
+    .pizzaContainer {
+        width: 100%;
+        height: auto;
+        margin-top: 25px;
+    }
+    .pizzaList {
+        gap: 50px
+    }
+}
