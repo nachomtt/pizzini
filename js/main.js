@@ -7,19 +7,26 @@ window.addEventListener("load", () => {
   searchBar();
 
   function textNormalize(text) {
+    let regex = /\w/g;
     if (text === null || text == "" || !text || text === undefined) {
-      return;
+      return null;
     } else {
-      let input = text;
-      input = input.replace(/\s/g, "");
-      input = input.toLowerCase();
-      return input;
+        if (regex.test(text)){
+            let input = text;
+            input = input.replace(/\s/g, "");
+            input = input.toLowerCase();
+            return input;
+        }else return null
+
     }
   }
   function searchBar() {
     function search(){
         let input = textNormalize($("#pizzaSearchInput").val());
-        if (input != undefined) {
+        if (input != undefined && input != null){
+            console.log("true")
+        }else console.log("false")
+        if (input != null) {
           const lista = document.querySelectorAll(".pizzaContainer");
           let foundStatus = false;
           lista.forEach((e, i) => {
@@ -54,10 +61,13 @@ window.addEventListener("load", () => {
   
           });
         } else {
+            $(".errorContainer").remove();
+            $(".listTitle").removeClass("displayNone");
           const lista = document.querySelectorAll(".pizzaContainer");
           lista.forEach((e, i) => {
             if (e.classList.contains("displayNone")) {
               e.classList.remove("displayNone");
+              
             }
           });
           return;
