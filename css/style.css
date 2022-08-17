@@ -96,6 +96,7 @@ main {
 .pizzaContainer img {
   width: 100%;
   height: 140px;
+  background-size: cover;
 }
 .pizzaText {
   text-align: center;
@@ -111,6 +112,7 @@ main {
   font-weight: 600;
   letter-spacing: 0.5px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  height: 57.5px;
 }
 .pizzaText p {
   font-weight: 600;
@@ -231,6 +233,9 @@ main {
         width: 100%;
         height: auto;
         margin-top: 25px;
+    }
+    .pizzaContainer p {
+        font-size: 25px;
     }
     .pizzaList {
         gap: 50px
